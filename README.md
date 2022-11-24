@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 #include <iostream>
 #include <stdlib.h>
 #include<conio.h>
@@ -26,8 +25,7 @@ sv makeNode(){
 	cout << "Nhap ID :"; 
 	fflush(stdin);
 	getline(cin,s.id);
- 
-    cout << "Nhap ten :"; cin.ignore();
+    cout << "Nhap ten :";
     fflush(stdin);
     getline(cin, s.name);
     
@@ -84,7 +82,8 @@ sv makeNode(){
 	do {
 		cout<<"Nhap nam sinh: ";
 	cin>>s.NamSinh;
-}while(s.NamSinh<=1990 || s.NamSinh>2023 && cout<<"\nNhap lai nam sinh\n");
+}
+    while(s.NamSinh<=1990 || s.NamSinh>2023 && cout<<"\nNhap lai nam sinh\n");
  
 		do  {
 			cout<<"Nhap gioi tinh y(nam) or n(nu) : ";
@@ -124,11 +123,11 @@ sv makeNode(){
 }
  
 
-bool empty(sv a){
+ bool empty(sv a){
 	return a == NULL;
 }
  
-int Size(sv a){
+ int Size(sv a){
     int cnt = 0;
 	while(a != NULL){
 		++cnt;
@@ -139,7 +138,7 @@ int Size(sv a){
 }
  
 
-void insertFirst(sv &a){
+ void insertFirst(sv &a){
 	sv tmp = makeNode();
 	if(a == NULL){
 		a = tmp;
@@ -166,7 +165,7 @@ void insertLast(sv &a){
 }
  
 
-void insertMiddle(sv &a,int pos){
+ void insertMiddle(sv &a,int pos){
 	int n = Size(a);
 	if(pos <= 0 || pos > n + 1){
 		cout << "Vi tri chen khong hop le !\n"; return;
@@ -193,7 +192,7 @@ void deleteFirst(sv &a){
 }
  
 
-void deleteLast(sv &a){
+ void deleteLast(sv &a){
 	if(a == NULL) return;
 	sv truoc = NULL, sau = a;
 	while(sau->next != NULL){
@@ -209,7 +208,7 @@ void deleteLast(sv &a){
 }
  
 
-void deleteMiddle(sv &a, int pos){
+ void deleteMiddle(sv &a, int pos){
 	if(pos <=0 || pos > Size(a)) return;
 	sv truoc = NULL, sau = a;
 	for(int i = 1; i < pos; i++){
@@ -224,7 +223,7 @@ void deleteMiddle(sv &a, int pos){
 	}
 }
  
-void in(Student s){
+ void in(Student s){
 	cout << "--------------------------------\n";
  	cout << "ID : " << s.id << endl;
  	cout << "Ho ten :" << s.name << endl;
@@ -244,7 +243,7 @@ void inds(sv a){
 	cout <<endl;
 }
  
-void sapxepDTB(sv &a){
+ void sapxepDTB(sv &a){
 	for(sv p = a; p->next != NULL; p = p->next){
 		sv max = p;
 		for(sv q = p->next; q != NULL; q = q->next){
@@ -257,7 +256,7 @@ void sapxepDTB(sv &a){
 		max->s = tmp;
 	}
 }
-void sapxepid(sv &a){
+ void sapxepid(sv &a){
 	for(sv p = a; p->next != NULL; p = p->next){
 		sv min = p;
 		for(sv q = p->next; q != NULL; q = q->next){
@@ -294,7 +293,7 @@ void sapxepid(sv &a){
 } 
 
 
-void timkiemsv(sv &a){
+ void timkiemsv(sv &a){
    string  ma;
    cout<<"Nhap ma sinh vien can tim: ";
    fflush(stdin) ;
@@ -308,7 +307,7 @@ void timkiemsv(sv &a){
 
 } 
 
-void nhanphim(){
+ void nhanphim(){
 	  do{
         cout<<"\nnhap phim bat ki de tiep tuc\n";
      }while(getch() == false  );
@@ -316,7 +315,7 @@ void nhanphim(){
             system("cls");
 }
  
-int main(){
+ int main(){
 	sv head = NULL;
 	int lc;
 	do{
@@ -327,11 +326,11 @@ int main(){
 		cout << "4. Xoa sinh vien o dau danh sach\n";
 		cout << "5. Xoa sinh vien o cuoi danh sach\n";
 		cout << "6. Xoa sinh vien  o giua\n";
-		cout << "7. Duyet danh sach lien ket\n";
+		cout << "7. Hien thi danh sach sinh vien\n";
 		cout << "8. Sap xep cac sinh vien diemtb cao den thap\n";
 		cout << "9. Sap xep cac sinh vien theo id\n";
-		cout << "10. sinh vien diem tb cao nhat va thap nhat\n";
-		cout << "11. So luong sinh vien trong dslk\n";
+		cout << "10. Sinh vien diem tb cao nhat va thap nhat\n";
+		cout << "11. So luong sinh vien trong danh sach\n";
 		cout << "12. Tim kiem sinh vien theo ma id \n "; 
 		cout << "0. Thoat !\n";
 		cout << "-------------------------------------\n";
